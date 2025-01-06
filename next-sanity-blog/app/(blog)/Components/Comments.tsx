@@ -60,21 +60,21 @@ const Comments: React.FC = () => {
   };
 
   const handleUpdateComment = (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (editingId !== null) {
-      setComments(
-        comments.map((comment) =>
-          comment.id === editingId
-            ? { ...comment, name, comment, timestamp: new Date().toLocaleString() }
-            : comment
-        )
-      );
-      setName('');
-      setComment('');
-      setEditingId(null);
-    }
-  };
+  if (editingId !== null) {
+    setComments(
+      comments.map((existingComment) =>
+        existingComment.id === editingId
+          ? { ...existingComment, name, comment, timestamp: new Date().toLocaleString() }
+          : existingComment
+      )
+    );
+    setName('');
+    setComment('');
+    setEditingId(null);
+  }
+};
 
   return (
     <div className="bg-gray-100 rounded-lg shadow-md max-w-3xl mx-auto p-4">

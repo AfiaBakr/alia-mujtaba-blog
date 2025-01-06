@@ -41,10 +41,10 @@ const ContactPage = () => {
 
     try {
       await emailjs.send(
-        'service_rx8gkym', // Replace with your Email.js service ID
-        'template_5tx0i2q', // Replace with your Email.js template ID
+        'service_id',// 'service_rx8gkym', // Replace with your Email.js service ID
+        'template_id',// 'template_5tx0i2q', // Replace with your Email.js template ID
         formData,
-        'Z9j3fKzVPxzzv-orQ' // Replace with your Email.js public key
+        'public-key'// 'Z9j3fKzVPxzzv-orQ' // Replace with your Email.js public key
       );
       setSuccess('Your message has been sent successfully!');
       setFormData({ name: '', email: '', message: '' });
